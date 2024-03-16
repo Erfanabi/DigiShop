@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart page</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- app bar -->
+    <div class="flex md:hidden items-center justify-between mt-10 px-4 mb-6">
+      <div class="w-7 h-7 bg-white shadow-lg flex items-center justify-center rounded">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+      <div class="text-lg font-bold text-slate-800">سبد خرید</div>
+      <div class="w-7 h-7 bg-white shadow-lg flex items-center justify-center rounded">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+    <!-- desktop navbar -->
+    <nav class="bg-white hidden md:block p-4 shadow-lg sticky z-10 top-0 mb-8">
+      <div class="container mx-auto 2xl:max-w-screen-2xl flex items-center justify-between">
+        <ul class="flex items-center gap-x-0 lg:gap-x-4 text-slate-800 lg:text-lg">
+          <li>
+            <a class="block px-4 py-2 hover:bg-gray-100 rounded-md ransition-all duration-500" href="#">LOGO</a>
+          </li>
+          <li>
+            <a class="block px-4 py-2 hover:bg-gray-100 rounded-md transition-all duration-500" href="#">خانه</a>
+          </li>
+          <li>
+            <a class="block px-4 py-2 hover:bg-gray-100 rounded-md transition-all duration-500" href="#">لپ تاپ</a>
+          </li>
+          <li>
+            <a class="block px-4 py-2 hover:bg-gray-100 rounded-md ransition-all duration-500" href="#">ساعت هوشمند</a>
+          </li>
+          <li>
+            <a class="block px-4 py-2 hover:bg-gray-100 rounded-md transition-all duration-500" href="#">تلفن همراه</a>
+          </li>
+        </ul>
+        <!-- search bar -->
+        <div class="flex-1 max-w-xl mr-4">
+          <div class="bg-gray-100 p-1 rounded-lg flex items-center">
+            <span class="ml-3 mr-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg
+            ></span>
+            <input type="text" placeholder="نام محصول، برند، یا رنگ..." class="focus:outline-none bg-transparent w-full p-2 text-slate-800" />
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--cart content -->
+    <div class="flex items-star container mx-auto 2xl:max-w-screen-2xl">
+      <!-- cart items -->
+      <div
+        class="flex flex-col gap-y-2 md:gap-y-4 px-4 flex-1"
+        x-data="{
+        products : [
+        {id:1, title:'ساعت هوشمند اپل سری 3', quantity : '۱' ,price : '۱۲,۳۵۰,۰۰۰ تومان'},
+        {id:2, title:'ساعت هوشمند اپل سری 4', quantity : '۳',price : '۱۳,۳۵۴,۰۰۰ تومان'},
+        {id:3, title:'ساعت هوشمند اپل سری 5', quantity : '۱',price : '۱۴,۳۵۴,۰۰۰ تومان'},
+        {id:4, title:'ساعت هوشمند اپل سری 7', quantity :'۲',price : '۱۵,۳۵۴,۵۰۰ تومان'},
+        ]
+      }"
+      >
+        <template x-for="product in products" :key="product.id">
+          <div class="bg-white rounded-lg p-3 flex items-stretch shadow-lg justify-between">
+            <div class="w-16 md:w-24 h-auto">
+              <img class="w-full h-auto" src="/assets/images/apple-watch-7.png" alt="" />
+            </div>
+            <div class="flex flex-col justify-between text-xs md:text-xl flex-1">
+              <span class="font-bold text-slate-800" x-text-="product.title"></span>
+              <span class="text-orange-600 font-medium" x-text="product.price"></span>
+            </div>
+            <div class="flex flex-col justify-between items-end">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:h-6 md:w-6 stroke-orange-500" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </span>
+              <div class="flex items-center gap-x-1 md:gap-x-3">
+                <span class="flex items-center justify-center rounded-full bg-gray-200 w-4 h-4 md:w-6 md:h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </span>
+                <span class="flex items-center justify-center border border-orange-500 rounded w-3 h-5 md:w-6 md:h-7 text-xs md:text-base" x-text="product.quantity"></span>
+                <span class="flex items-center justify-center rounded-full bg-orange-200 w-4 h-4 md:w-6 md:h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 md:h-5 md:w-5 stroke-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="md:block hidden w-1/3 max-w-sm">
+        <div class="bg-white mb-5 px-4 py-5 rounded-lg w-full text-slate-800 font-medium">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-lg">مجموع قیمت :</span>
+            <span class="text-orange-500">۳۵,۴۵۰,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-light text-lg">کد تخفیف:</span>
+            <div class="flex items-stretch justify-between rounded-xl overflow-hidden bg-gray-200">
+              <input type="text" dir="ltr" class="border-0 w-full max-w-[150px] bg-transparent p-2 text-gray-700 outline-none focus:outline-none" placeholder="AS-DSE" />
+              <button class="border-0 bg-orange-500 px-4 text-white outline-none">تایید</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mb-11">
+            <span class="text-lg">تخفیف:</span>
+            <span class="text-orange-500">۴۵۰,۰۰۰ تومان</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-lg">قیمت نهایی:</span>
+            <span class="text-orange-500">۴۵۰,۰۰۰ تومان</span>
+          </div>
+        </div>
+        <div>
+          <button class="w-full mb-4 py-3 text-white bg-orange-500 rounded-md text-lg">اضافه به سبد خرید</button>
+          <button class="w-full py-3 text-orange-500 border-2 border-orange-500 rounded-md text-lg">انصراف از خرید</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

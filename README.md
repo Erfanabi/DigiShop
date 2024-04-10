@@ -8,7 +8,7 @@
 - [![Product Name Screen Shot][product-screenshot-4]](https://example.com)
 
 
-- [Demo Project](https://rick-and-morty-omega-six.vercel.app/)
+- [Demo Project](https://digi-shop-liart.vercel.app/)
 
 ### Built With
 
@@ -24,7 +24,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/erfanabi/rick-and-morty.git
+   git clone https://github.com/Erfanabi/DigiShop.git
    ```
 2. Install NPM packages
    ```sh
@@ -46,9 +46,9 @@ Project Link: [https://github.com/Erfanabi/DigiShop](https://github.com/Erfanabi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot-1]: public/Screenshot 1.png
-[product-screenshot-2]: public/Screenshot 2.png
-[product-screenshot-3]: public/Screenshot 3.png
-[product-screenshot-4]: public/Screenshot 4.png
+[product-screenshot-1]: public/Screenshot-1.png
+[product-screenshot-2]: public/Screenshot-2.png
+[product-screenshot-3]: public/Screenshot-3.png
+[product-screenshot-4]: public/Screenshot-4.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/

@@ -1,0 +1,41 @@
+@import url("/public/fonts/fonts.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .main {
+    @apply grid grid-cols-[215px_1fr] md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-4 p-0 md:p-3 2xl:px-0 pb-20 md:pb-0;
+  }
+
+  .sidebar {
+    @apply hidden md:block col-start-2 col-end-1 row-start-1 row-end-3;
+  }
+
+  .header__sort {
+    @apply bg-white hidden md:block col-start-3 col-end-2 row-start-1 row-end-2 rounded-xl px-4;
+  }
+
+  .products {
+    @apply col-start-3 col-end-1 row-start-3 row-end-1 md:col-start-3 md:col-end-2 md:row-start-2 md:row-end-3;
+  }
+}
+
+/* @layer components {
+  .main {
+    @apply grid h-screen grid-cols-12 grid-rows-[55px_minmax(500px,_1fr)] sm:gap-5 md:gap-7 lg:gap-8 p-5;
+  }
+
+  .sidebar {
+    @apply bg-white hidden md:block md:col-span-3 sm:row-span-3 lg:col-span-3 rounded-xl;
+  }
+
+  .header__sort {
+    @apply bg-white hidden md:block md:col-span-9 lg:col-span-9 rounded-md;
+  }
+
+  .products {
+    @apply col-span-12 md:col-span-9 lg:col-span-9 row-span-2;
+  }
+} */
